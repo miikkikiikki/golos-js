@@ -1,6 +1,6 @@
 {
   "name": "golos-js",
-  "version": "0.6.3",
+  "version": "0.7.0",
   "description": "Golos.js the JavaScript API for Golos blockchain",
   "main": "lib/index.js",
   "scripts": {
