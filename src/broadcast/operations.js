@@ -467,6 +467,79 @@ module.exports = [
       "request_id",
       "memo"
     ]
-  }
+  },
+  {
+    "roles": ["active", "owner"],
+    "operation": "delegate_vesting_shares",
+    "params": [
+      "delegator",
+      "delegatee",
+      "vesting_shares"
+    ]
+  },
+  {
+    "roles": ["active", "owner"],
+    "operation": "account_create_with_delegation",
+    "params": [
+      "fee",
+      "delegation",
+      "creator",
+      "new_account_name",
+      "owner",
+      "active",
+      "posting",
+      "memo_key",
+      "json_metadata",
+      "extensions"
+    ]
+  },
+  {
+    "roles": ["posting"],
+    "operation": "account_metadata",
+    "params": [
+      "account",
+      "json_metadata"
+    ]
+  },
+  {
+    "roles": ["active", "owner"],
+    "operation": "proposal_create",
+    "params": [
+      "author",
+      "title",
+      "memo",
+      "expiration_time",
+      "proposed_operations",
+      "review_period_time",
+      "extensions"
+    ]
+  },
+  {
+    "roles": ["posting", "active", "owner"],
+    "operation": "proposal_update",
+    "params": [
+      "author",
+      "title",
+      "active_approvals_to_add",
+      "active_approvals_to_remove",
+      "owner_approvals_to_add",
+      "owner_approvals_to_remove",
+      "posting_approvals_to_add",
+      "posting_approvals_to_remove",
+      "key_approvals_to_add",
+      "key_approvals_to_remove",
+      "extensions"
+    ]
+  },
+  {
+    "roles": ["active", "owner"],
+    "operation": "proposal_delete",
+    "params": [
+      "author",
+      "title",
+      "requester",
+      "extensions"
+    ]
+  },
 ]
 

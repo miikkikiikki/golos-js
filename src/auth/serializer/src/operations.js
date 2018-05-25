@@ -591,6 +591,79 @@ let set_reset_account = new Serializer(
     }
 );
 
+let delegate_vesting_shares = new Serializer(
+    "delegate_vesting_shares", {
+        delegator: string,
+        delegatee: string,
+        vesting_shares: asset
+  }
+);
+  
+let account_create_with_delegation = new Serializer(
+    "account_create_with_delegation", {
+        fee: asset,
+        delegation: asset,
+        creator: string,
+        new_account_name: string,
+        owner: authority,
+        active: authority,
+        posting: authority,
+        memo_key: public_key,
+        json_metadata: string,
+        extensions: set(future_extensions)
+  }
+);
+
+let account_metadata = new Serializer(
+    "account_metadata", {
+        account: string,
+        json_metadata: string
+  }
+);
+
+let operation_wrapper = new Serializer(
+    "operation_wrapper", {
+        op: operation
+  }
+);
+  
+let proposal_create = new Serializer(
+    "proposal_create", {
+        author: string,
+        title: string,
+        memo: string,
+        expiration_time: time_point_sec,
+        proposed_operations: array(operation_wrapper),
+        review_period_time: optional(time_point_sec),
+        extensions: set(future_extensions)
+  }
+);
+  
+let proposal_update = new Serializer(
+    "proposal_update", {
+        author: string,
+        title: string,
+        active_approvals_to_add: set(string),
+        active_approvals_to_remove: set(string),
+        owner_approvals_to_add: set(string),
+        owner_approvals_to_remove: set(string),
+        posting_approvals_to_add: set(string),
+        posting_approvals_to_remove: set(string),
+        key_approvals_to_add: set(public_key),
+        key_approvals_to_remove: set(public_key),
+        extensions: set(future_extensions)
+  }
+);
+  
+let proposal_delete = new Serializer(
+    "proposal_delete", {
+        author: string,
+        title: string,
+        requester: string,
+        extensions: set(future_extensions)
+  }
+);
+
 let fill_convert_request = new Serializer(
     "fill_convert_request", {
         owner: string,
@@ -690,6 +763,22 @@ let comment_payout_update = new Serializer(
     }
 );
 
+let comment_benefactor_reward = new Serializer(
+    "comment_benefactor_reward", {
+        benefactor: string,
+        author: string,
+        permlink: string,
+        reward: asset
+  }
+);
+  
+let return_vesting_delegation = new Serializer(
+    "return_vesting_delegation", {
+        account: string,
+        vesting_shares: asset
+  }
+);
+
 operation.st_operations = [
     vote,
     comment,
@@ -730,6 +819,12 @@ operation.st_operations = [
     decline_voting_rights,
     reset_account,
     set_reset_account,
+    delegate_vesting_shares,
+    account_create_with_delegation,
+    account_metadata,
+    proposal_create,
+    proposal_update,
+    proposal_delete,
     fill_convert_request,
     author_reward,
     curation_reward,
@@ -741,7 +836,9 @@ operation.st_operations = [
     shutdown_witness,
     fill_transfer_from_savings,
     hardfork,
-    comment_payout_update
+    comment_payout_update,
+    comment_benefactor_reward,
+    return_vesting_delegation
 ];
 
 //# -------------------------------
