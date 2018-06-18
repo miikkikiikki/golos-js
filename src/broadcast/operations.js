@@ -541,5 +541,13 @@ module.exports = [
       "extensions"
     ]
   },
+  {
+    "roles": ["active", "owner"],
+    "operation": "chain_properties_update",
+    "params": [
+      "owner",
+      "props"
+    ]
+  },
 ]
 

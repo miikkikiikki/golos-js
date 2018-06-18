@@ -300,7 +300,7 @@ let account_update = new Serializer(
     }
 );
 
-let chain_properties = new Serializer(
+let chain_properties_17 = new Serializer(
     "chain_properties", {
         account_creation_fee: asset,
         maximum_block_size: uint32,
@@ -313,7 +313,7 @@ let witness_update = new Serializer(
         owner: string,
         url: string,
         block_signing_key: public_key,
-        props: chain_properties,
+        props: chain_properties_17,
         fee: asset
     }
 );
@@ -664,6 +664,28 @@ let proposal_delete = new Serializer(
   }
 );
 
+let chain_properties_18 = new Serializer(
+    "chain_properties_18", {
+        account_creation_fee: asset,
+        maximum_block_size: uint32,
+        sbd_interest_rate: uint16,
+        create_account_min_golos_fee: asset,
+        create_account_min_delegation: asset,
+        create_account_delegation_time: uint32,
+        min_delegation: asset
+  }
+);
+
+let chain_properties_update = new Serializer(
+    "chain_properties_update", {
+        owner: string,
+        props: static_variant([
+            chain_properties_17,
+            chain_properties_18
+        ])
+  }
+);
+
 let fill_convert_request = new Serializer(
     "fill_convert_request", {
         owner: string,
@@ -789,7 +811,7 @@ operation.st_operations = [
     limit_order_cancel,
     feed_publish,
     convert,
-    account_create,
+    account_create, 
     account_update,
     witness_update,
     account_witness_vote,
@@ -825,6 +847,7 @@ operation.st_operations = [
     proposal_create,
     proposal_update,
     proposal_delete,
+    chain_properties_update,
     fill_convert_request,
     author_reward,
     curation_reward,
