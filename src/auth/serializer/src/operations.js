@@ -300,7 +300,7 @@ let account_update = new Serializer(
     }
 );
 
-let chain_properties_17 = new Serializer(
+let chain_properties = new Serializer(
     "chain_properties", {
         account_creation_fee: asset,
         maximum_block_size: uint32,
@@ -313,7 +313,7 @@ let witness_update = new Serializer(
         owner: string,
         url: string,
         block_signing_key: public_key,
-        props: chain_properties_17,
+        props: chain_properties,
         fee: asset
     }
 );
@@ -665,7 +665,7 @@ let proposal_delete = new Serializer(
 );
 
 let chain_properties_18 = new Serializer(
-    "chain_properties_18", {
+    1, {
         account_creation_fee: asset,
         maximum_block_size: uint32,
         sbd_interest_rate: uint16,
@@ -680,7 +680,7 @@ let chain_properties_update = new Serializer(
     "chain_properties_update", {
         owner: string,
         props: static_variant([
-            chain_properties_17,
+            chain_properties,
             chain_properties_18
         ])
   }
