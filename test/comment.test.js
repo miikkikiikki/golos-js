@@ -9,7 +9,7 @@ const postingWif = password
   ? golos.auth.toWif(username, password, 'posting')
   : '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
 
-describe('golos.broadcast:', () => {
+describe.skip('golos.broadcast:', () => {
 
   describe('comment with options', () => {
     before(() => {

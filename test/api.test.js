@@ -8,7 +8,7 @@ import golos, { Golos } from '../src/api/index';
 import config from '../src/config';
 import testPost from './test-post.json';
 
-describe('golos.api:', function () {
+describe.skip('golos.api:', function () {
   this.timeout(30 * 1000);
 
   describe('new Golos', () => {
