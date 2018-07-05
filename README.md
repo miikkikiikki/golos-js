@@ -3,29 +3,6 @@ Golos.js the JavaScript API for Golos blockchain
 
 [![npm version](https://badge.fury.io/js/golos-js.svg)](https://badge.fury.io/js/golos-js)
 
-# Documentation
-
-- [Install](#install)
-- [Browser](#browser)
-- [Config](#config)
-- [Database API](#api)
-    - [Subscriptions](#subscriptions)
-    - [Tags](#tags)
-    - [Blocks and transactions](#blocks-and-transactions)
-    - [Globals](#globals)
-    - [Keys](#keys)
-    - [Accounts](#accounts)
-    - [Market](#market)
-    - [Authority / validation](#authority--validation)
-    - [Votes](#votes)
-    - [Content](#content)
-    - [Witnesses](#witnesses)
-- [Login API](#login)
-- [Follow API](#follow-api)
-- [Broadcast API](#broadcast-api)
-- [Broadcast](#broadcast)
-- [Auth](#auth)
-
 # Install
 ```
 $ npm install golos-js --save
@@ -79,9 +56,6 @@ golos.api.getState('/trends/funny', function(err, result) {
 var reputation = golos.formatter.reputation(user.reputation);
 console.log(reputation);
 ```
-
-## Contributions
-Patches are welcome! Contributors are listed in the package.json file. Please run the tests before opening a pull request and make sure that you are passing all of them. If you would like to contribute, but don't know what to work on, check the issues list or on Golos Chat https://chat.golos.io/ channel #golosjs.
 
 ## Issues
 When you find issues, please report them!
