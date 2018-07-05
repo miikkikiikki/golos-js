@@ -44,19 +44,6 @@ golos.api.getAccounts(['ned', 'dan'], function(err, result) {
 });
 ```
 
-### Get State
-```js 
-golos.api.getState('/trends/funny', function(err, result) {
-	console.log(err, result);
-});
-```
-
-### Reputation Formatter
-```js 
-var reputation = golos.formatter.reputation(user.reputation);
-console.log(reputation);
-```
-
 ## Issues
 When you find issues, please report them!
 
