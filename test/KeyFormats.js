@@ -70,6 +70,11 @@ var test = function(key) {
             var address = Address.fromPublic(public_key, true, 56);
             assert.equal(key.Compressed_PTS, address.toString());
         });
+
+        it("all_zeros_key", function() {
+            var z_key = PublicKey.fromString(key.all_zeros_key);
+            assert.equal(key.all_zeros_key, z_key.toPublicKeyString());
+        });
     });
 };
 
@@ -87,6 +92,7 @@ test({
     Uncompressed_BTC:	"GLSLAFmEtM8as1mbmjVcj5dphLdPguXquimn",
     Compressed_BTC:	"GLSANNTSEaUviJgWLzJBersPmyFZBY4jJETY",
     Uncompressed_PTS:	"GLSEgj7RM6FBwSoccGaESJLC3Mi18785bM3T",
-    Compressed_PTS:	"GLSD5rYtofD6D4UHJH6mo953P5wpBfMhdMEi"
+    Compressed_PTS:	"GLSD5rYtofD6D4UHJH6mo953P5wpBfMhdMEi",
+    all_zeros_key: "GLS1111111111111111111111111111111114T1Anm"
 });
 
