@@ -351,12 +351,6 @@ module.exports = [
     "params": ["blogAccount"]
   },
   {
-    "api": "follow",
-    "method": "get_accounts",
-    "method_name":"getAccountsWithReputation",
-    "params": ["names"]
-  },
-  {
     "api": "account_by_key",
     "method": "get_key_references",
     "params": ["account_name_type"]
